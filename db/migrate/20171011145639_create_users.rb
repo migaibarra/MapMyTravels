@@ -7,8 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email, null: false
       t.string :password_hash, null: false
 
-      t.has_many :places, through: :users_places
-
       t.timestamps
     end
   end
