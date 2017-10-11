@@ -6,5 +6,5 @@ This is a simple travel log app that lets users map out their travels around the
 
 The following references were used to create this web application:
 
-* skeleton is from Devin Miller and can be grabbed at the following location:
+* Skeleton is from Devin Miller and can be grabbed at the following location:
 > https://github.com/devzmiller/sinatra-skeleton
