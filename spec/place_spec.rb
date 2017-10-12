@@ -46,5 +46,11 @@ describe Place do
       place_example.hometown_people << user_example1
       expect(place_example.hometown_people).to include(user_example1)
     end
+
+    it 'can have multiple users listing the place as a hometown' do
+      place_example.hometown_people << user_example1
+      place_example.hometown_people << user_example2
+      expect(place_example.hometown_people).to eq([user_example1, user_example2])
+    end
   end
 end
