@@ -34,5 +34,18 @@ describe User do
       user_example.email = ""
       expect(user_example).to_not be_valid
     end
+
+    it 'must have a unique email' do
+      user_example.save
+      user_duplicate = User.new(
+        first_name: "Jane",
+        middle_initial: "P",
+        last_name: "Smith",
+        email: "jpsmith@example.com",
+        password: "passw0rd2"
+      )
+      user_duplicate.password
+      expect(user_duplicate).to_not be_valid
+    end
   end
 end
