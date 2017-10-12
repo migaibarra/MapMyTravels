@@ -63,5 +63,11 @@ describe Place do
       place_example.citizens << user_example2
       expect(place_example.citizens).to eq([user_example1, user_example2])
     end
+
+    it 'can have multiple users visit a place' do
+      place_example.visitors << user_example1
+      place_example.visitors << user_example2
+      expect(place_example.visitors).to eq([user_example1, user_example2])
+    end
   end
 end
