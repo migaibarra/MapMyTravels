@@ -52,5 +52,16 @@ describe Place do
       place_example.hometown_people << user_example2
       expect(place_example.hometown_people).to eq([user_example1, user_example2])
     end
+
+    it 'is a users current place' do
+      place_example.citizens << user_example1
+      expect(place_example.citizens).to include(user_example1)
+    end
+
+    it 'can have multiple users listing the place as a currently living at' do
+      place_example.citizens << user_example1
+      place_example.citizens << user_example2
+      expect(place_example.citizens).to eq([user_example1, user_example2])
+    end
   end
 end
