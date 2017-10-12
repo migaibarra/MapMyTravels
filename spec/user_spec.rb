@@ -64,4 +64,20 @@ describe User do
       expect(user_example).to_not be_valid
     end
   end
+
+  describe "associations" do
+
+  end
+
+  describe "methods" do
+      it '#password method hashes the user password' do
+        expect("passw0rd").to_not eq(user_example.password_hash)
+      end
+
+      it "will not return a user if the login is not authenticated" do
+        user_example.save
+        authenticated = User.login("jpsmith@example.com", "password")
+        expect(authenticated).to be nil
+      end
+  end
 end
