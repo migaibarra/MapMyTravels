@@ -58,5 +58,10 @@ describe User do
       )
       expect(user_bad_email).to_not be_valid
     end
+
+    it 'is not valid without a password_hash' do
+      user_example.password_hash = ""
+      expect(user_example).to_not be_valid
+    end
   end
 end
