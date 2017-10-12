@@ -47,5 +47,16 @@ describe User do
       user_duplicate.password
       expect(user_duplicate).to_not be_valid
     end
+
+    it 'must have a properly formatted email' do
+      user_bad_email = User.new(
+        first_name: "Jane",
+        middle_initial: "P",
+        last_name: "Smith",
+        email: "jpsmith",
+        password: "passw0rd2"
+      )
+      expect(user_bad_email).to_not be_valid
+    end
   end
 end
