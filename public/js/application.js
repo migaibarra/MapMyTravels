@@ -1,6 +1,8 @@
 $(document).ready(() => {
-  const $navIcon = $('.nav-icon');
-  $navIcon.on('click', () => {
-    $(this).toggleClass('button-open')
+  const $toggler = $(".nav-button"), $navWrap = $(".nav-wrap")
+
+  $toggler.on("click", (e) => {
+    $toggler.toggleClass("nav-button-toggle");
+    $navWrap.toggleClass("nav-show")
   });
 });

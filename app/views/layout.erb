@@ -19,16 +19,15 @@
   <title>MapMyTravels</title>
 </head>
 <body>
-  <div class="nav-icon-wrapper">
-    <div class="nav-icon">
-      <div class="bar bar-top button-open"></div>
-      <div class="bar bar-middle"></div>
-      <div class="bar bar-bottom"></div>
-    </div>
+  <div class="nav-button">
+    <div class="bar-top"></div>
+    <div class="bar-middle"></div>
+    <div class="bar-bottom"></div>
   </div>
+
   <div class="nav-wrap">
-    <nav class="nav">
-      <ul class="hide" style="display: block;">
+    <nav class="nav-menu">
+      <ul class="nav-list">
         <% if session[:user_id] %>
           <li><form action="/login" method="post">
             <input type="hidden" name="_method" value="delete">
@@ -44,6 +43,7 @@
       </ul>
     </nav>
   </div>
+
   <div class="wrapper">
     <h1 id="title-bar">MapMyTravels</h1>
     <%= yield %>

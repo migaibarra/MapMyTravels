@@ -1,0 +1,52 @@
+/* Navigation Button */
+.nav-button {
+  cursor: pointer;
+  display: inline-block;
+  position: fixed;
+  right: 15px;
+}
+
+.bar-top, .bar-middle, .bar-bottom {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: .4s;
+}
+
+.nav-button-toggle .bar-top {
+  transform: rotate(-45deg) translate(-9px, 6px);
+  transition: .5s;
+}
+
+.nav-button-toggle .bar-middle {
+  opacity: 0;
+  transition: .1s ease-in;
+}
+
+.nav-button-toggle .bar-bottom {
+  transform: rotate(45deg) translate(-8px, -8px);
+  transition: .5s;
+}
+
+/* Slide out menu */
+
+.nav-wrap {
+  background-color: cyan;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 280px;
+  margin-right: -280px;
+  font-size: 1em;
+  font-weight: 700;
+  overflow: auto;
+  transition: .25s;
+  z-index: -1;
+}
+
+.nav-show {
+  margin-right: 0;
+  box-shadow: 15px 15px 15px 15px #B9ADAD;
+}
