@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "Not the proper email format!" }
   validates :password_hash, presence: true
 
-  has_many :places, through: :users_places
+  has_many :places, through: :visits
   belongs_to :place, foreign_key: :hometown_id
   belongs_to :place, foreign_key: :currently_living_id
 
