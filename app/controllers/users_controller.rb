@@ -8,7 +8,7 @@ end
 
 post "/users" do
   user = User.new(:user_params)
-  if user.is_valid?
+  if user.valid?
     user.save
     redirect "/login"
   else

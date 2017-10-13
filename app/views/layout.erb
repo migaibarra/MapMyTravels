@@ -16,10 +16,34 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>MapMyTravels</title>
 </head>
 <body>
-  <%= yield %>
-  <footer>This website was built by Devin Miller. 2017</footer>
+  <div class="nav-icon-wrapper">
+    <div class="bar bar-top"></div>
+    <div class="bar bar-middle"></div>
+    <div class="bar bar-bottom"></div>
+  </div>
+  <div class="nav-wrap">
+    <nav class="nav">
+      <ul class="hide" style="display: block;">
+        <% if session[:user_id] %>
+          <li><form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input id='logout' name="submit" value="Logout">
+          </form></li>
+          <li><a href="/users/<%= session[:user_id] %>">See your Travels</a></li>
+          <li><a href="/users/<%= session[:user_id] %>/places/new">Post Your Travels</a></li>
+        <% else %>
+          <li><a href="/login/new">Login</a></li>
+          <li><a href="/user/new">Signup</a></li>
+        <% end %>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrapper">
+    <%= yield %>
+  </div>
 </body>
 </html>
