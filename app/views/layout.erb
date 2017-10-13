@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>MapMyTravels</title>
+</head>
+<body>
+  <div class="nav-button">
+    <div class="bar-top"></div>
+    <div class="bar-middle"></div>
+    <div class="bar-bottom"></div>
+  </div>
+
+  <div class="nav-wrap">
+    <nav class="nav-menu">
+      <ul class="nav-list">
+        <% if session[:user_id] %>
+          <li><form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input id='logout' name="submit" value="Logout">
+          </form></li>
+          <li><a href="/users/<%= session[:user_id] %>">See your Travels</a></li>
+          <li><a href="/users/<%= session[:user_id] %>/places/new">Post Your Travels</a></li>
+        <% else %>
+          <li><a href="/login/new">Login</a></li>
+          <li><a href="/user/new">Signup</a></li>
+        <% end %>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wrapper">
+    <h1 id="title-bar">MapMyTravels</h1>
+    <%= yield %>
+  </div>
+</body>
+</html>
