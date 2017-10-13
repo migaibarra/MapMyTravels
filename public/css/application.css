@@ -1,0 +1,55 @@
+.nav-icon {
+  height: 40px;
+  padding: 4px;
+  position: fixed;
+  transition: .25s;
+  width: 44px;
+  z-index: 15;
+}
+
+.nav-icon:hover{
+  cursor: pointer;
+}
+
+.nav-icon .bar {
+  border-radius: 2px;
+  position: absolute;
+  transition: .5s;
+  width: 80%;
+}
+
+.nav-icon .bar-top{
+  border: 4px solid #555;
+  border-bottom: none;
+  top: 0;
+}
+
+.nav-icon .bar-middle{
+  background-color: #555;
+  height: 4px;
+  margin-bottom: 7px;
+  margin-top: 7px;
+  top: 4px;
+}
+
+.nav-icon .bar-bottom {
+  border: 4px solid #555;
+  border-top: none;
+  top: 22px;
+}
+
+.button-open .menu-bar-top {
+  transform: rotate(45deg) translate(8px, 8px);
+  transition: .5s;
+}
+
+.button-open .menu-bar-middle {
+  opacity: 0;
+  transform: translate(230px);
+  transition: .1s ease-in;
+}
+
+.button-open .menu-bar-bottom {
+  transform: rotate(-45deg) translate(8px, -7px);
+  transition: .5s;
+}
