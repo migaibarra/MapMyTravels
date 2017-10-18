@@ -7,7 +7,7 @@ get "/users/new" do
 end
 
 post "/users" do
-  user = User.new(:user_params)
+  user = User.new(params[:user_params])
   if user.valid?
     user.save
     redirect "/login"
@@ -15,4 +15,9 @@ post "/users" do
     @error = user.errors.full_messages
     erb :'/users/new'
   end
+end
+
+get "/users/:id" do
+  @user = User.find(params[:id])
+  erb :'/users/show'
 end
