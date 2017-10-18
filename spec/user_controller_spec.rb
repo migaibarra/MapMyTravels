@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "User Controller" do
-  let(:user_example) do
+  let!(:user_example) do
     user_creation = User.new(
       first_name: "Jonny",
       middle_initial: "I",
@@ -24,7 +24,8 @@ describe "User Controller" do
     expect(last_response.status).to eq(200)
   end
 
-  it 'posts a redirect response after filling out a new user' do
+  xit 'posts a redirect response after filling out a new user' do
     post '/users', { user_example: :user_params }
+    expect(last_response.status).to eq(302)
   end
 end

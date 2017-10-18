@@ -8,12 +8,13 @@ end
 
 post "/users" do
   user = User.new(params[:user_params])
-  if user.valid?
-    user.save
+  p user
+  p user.valid?
+  if user.save
     redirect "/login"
   else
-    @error = user.errors.full_messages
     erb :'/users/new'
+    @errors = user.errors.full_messages
   end
 end
 
